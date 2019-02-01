@@ -1,0 +1,23 @@
+{
+  "name": "constructor-word-guess",
+  "version": "1.0.0",
+  "description": "This is a  Node Word Guess command-line game using constructor functions.",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willrackley/Constructor-Word-Guess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willrackley/Constructor-Word-Guess/issues"
+  },
+  "homepage": "https://github.com/willrackley/Constructor-Word-Guess#readme"
+}
