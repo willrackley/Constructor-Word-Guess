@@ -6,10 +6,10 @@ var Letters = function(char){
     this.toString = function(){
         if(this.guessed){
             return this.char + " ";
+        } else if(!this.guessed){
+            return "_ ";
         } else {
-            
-            char = "_ "
-            return char;
+            return this.char;
         }
         //console.log(this.char);
     }
@@ -18,11 +18,7 @@ var Letters = function(char){
         if(this.char === x){
             this.guessed = true;
             
-        } else {
-            this.guessed = false;
-            //guessesRemaining--;
-            //console.log("You have " + guessesRemaining + " left.")
-        }
+        } 
     }
 }
 

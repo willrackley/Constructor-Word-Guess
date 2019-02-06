@@ -4,43 +4,58 @@ var inquirer = require("inquirer");
 
 var gameWords = ["lexus","audi"]
 var randWordSelect = Math.floor(Math.random() * 2);
-var chosenWordToSend = [];
-var tobeChecked = [];
+var chosenWordToSend = gameWords[randWordSelect];
+var correctLetters = [];
+var wrongLetters = [];
 var guessedArray = [];
-var guessesRemaining = 7; 
-var word = new Words();
+var trueCtr = 0;
+var guessesRemaining = 7;
+var word = new Words(chosenWordToSend);
+var contWord = new Words(chosenWordToSend);
+var trueCtr = 0;
+
 
 var continuePlay = function(){
+
+    if(guessesRemaining > 0){
     
     inquirer.prompt([
         {
             name: "GuessLetter",
             type: "input",
-            message: "Guess a Letter",
+            message: "Guess a Letter a-z",
         }
     ]).then(function(answers) {
+        var checkedchar = answers.GuessLetter.toLowerCase();
+        var  wordCheckArray = [];
         for(i=0; i < word.newLetters.length; i++){
-           var checkedchar = answers.GuessLetter;
-           
             word.wordGuess(checkedchar);
-           
-            
-       }
-       console.log('\n');
-       word.wordDisplay();
-       console.log('\n');
-      
-       if(tobeChecked.indexOf("false") === guessedArray.indexOf("false")){
-            guessesRemaining--;
-            console.log("Wrong! you have " + guessesRemaining + " guesses remaining")
-        }
         
-        console.log('\n');
+       }
+     
+       if(chosenWordToSend.includes(checkedchar)){
+        console.log("\nCORRECT!");
+       } else {
+        console.log("\nINCORRECT!");
+        guessesRemaining--;
+        wrongLetters.push(checkedchar);
+       }
+       console.log('\n========================');
 
-        if(guessesRemaining > 0){
-            continuePlay();
+       word.wordDisplay();
+       
+       console.log("\nyou have " + guessesRemaining + " guesses remaining");
+       console.log("\nletters you've guessed incorrectly: " + wrongLetters.join(' '));
+       console.log('\n\n========================');
+       console.log("\n");
+       
+        continuePlay();
+        function wordCheck(key){
+            wordCheckArray.push(key.guessed);
+           
         }
     });
+}
    
 }
   
@@ -58,26 +73,15 @@ inquirer.prompt([
     }, 
     
 ]).then(function(answers) {
-        
-        
-        chosenWordToSend = gameWords[randWordSelect];
-        
-       
-        //grabs a random word from the cars list and places places holders in the newLetters array
-        for(var i = 0; i < chosenWordToSend.length; i++) {
-            var letterArg = chosenWordToSend.charAt(i) ;
-            word.addLetters(letterArg);
-            tobeChecked.push(word.newLetters[i].guessed);
 
-        }
-        console.log('\n');
+    
+    console.log('\n========================');
         word.wordDisplay();
-        console.log('\n');
-        console.log("you have " + guessesRemaining + " guesses remaining")
-        console.log('\n');
-        
+        console.log("\nyou have " + guessesRemaining + " guesses remaining")
+        console.log('\n\n========================');
+        console.log("\n");
        
-            continuePlay();
+        continuePlay();
         
 
     });

@@ -2,20 +2,29 @@ var Letters = require("./Letters");
 
 
 
-var Words = function(){
+var Words = function(answer){
     this.newLetters = [];
+    
+    //creates letter var from letter constructor and pushes that to our newLetters array
+    for(var i=0; i < answer.length; i++){
+        var addLetter = new Letters(answer[i]);
+        this.newLetters.push(addLetter);
+    }
+
     this.wordDisplay = function(){
-        this.newLetters.toString();
-        console.log(this.newLetters.join(''));
        
+        for(i=0; i< this.newLetters.length; i++){
+            this.newLetters[i].toString();
+        }
+        var displayedWord = this.newLetters.join('')
+        console.log("\n" + displayedWord);   
+        
     } 
     this.wordGuess = function(x){
-        for(i=0; i < this.newLetters.length; i++){
+        for(var i=0; i < this.newLetters.length; i++){
             this.newLetters[i].charCheck(x);
-        }  
-    }
-    this.addLetters = function(char){
-        this.newLetters.push(new Letters(char));
+        } 
+        
     }
    
 }
