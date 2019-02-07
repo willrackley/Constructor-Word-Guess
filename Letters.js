@@ -1,8 +1,7 @@
-
-
 var Letters = function(char){
     this.char = char;
     this.guessed = false;
+
     this.toString = function(){
         if(this.guessed){
             return this.char + " ";
@@ -11,8 +10,8 @@ var Letters = function(char){
         } else {
             return this.char;
         }
-        //console.log(this.char);
     }
+    
     this.charCheck = function(x){
         
         if(this.char === x){
@@ -21,7 +20,6 @@ var Letters = function(char){
         } 
     }
 }
-
 
 
 module.exports = Letters;
