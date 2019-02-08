@@ -12,4 +12,10 @@ This is a Node Word Guess command-line game that use constructor functions that 
 ![Game Play](firstGamePlay.gif)
 
 
+* If the user guesses all the letters correctly then they are asked if they would like to play another word (if they haven't completed the game). 
+
+![Word Win](winWord.gif)
+
+
+
 
