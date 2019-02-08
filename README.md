@@ -4,4 +4,4 @@ This is a Node Word Guess command-line game that use constructor functions that 
 ## Game Play
 At the beginning of the game the user is presented with a prompt explaining the game, and if they would like to play. If they decide to play, they are presented with the first word to guess.
 
-![Start The Game](https://giphy.com/embed/1msy25NsaJRp1yJjse)
+[Start The Game](https://giphy.com/embed/1msy25NsaJRp1yJjse)
