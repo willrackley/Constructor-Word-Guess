@@ -6,7 +6,6 @@ This is a Node Word Guess command-line game that use constructor functions that 
 
 ![Start The Game](startScreen.gif)
 
-
 * Once the user starts guessing, if they guess correctly then the letter is displayed. If the user guesses in correctly then that letter is displayed in the area that says "letters you've guessed incorrectly: " and you lose a remaining guess. If the user types anything other than a letter than they are prompted to choose a letter A-Z. They are not penalized a remaining guess.
 
 ![Game Play](firstGamePlay.gif)
@@ -19,6 +18,12 @@ This is a Node Word Guess command-line game that use constructor functions that 
 * If the user guesses incorrectly 7 times during a word, then they lose the game and are given the option of restarting the game.
 
 ![Word loss](loseWord.gif)
+
+* Once the user correctly guesses every word in the game then they win and are asked if they would like to play again.
+
+![Win Game](winGame.gif)
+
+
 
 
 
