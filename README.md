@@ -16,6 +16,9 @@ This is a Node Word Guess command-line game that use constructor functions that 
 
 ![Word Win](winWord.gif)
 
+* If the user guesses incorrectly 7 times during a word, then they lose the game and are given the option of restarting the game.
+
+![Word loss](loseWord.gif)
 
 
 
